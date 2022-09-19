@@ -9,8 +9,7 @@ void __cdecl hooked_CGame_Proccess()
 	static int state = 2;
 	if (state == 0)
 	{
-		if (dialog_moving)
-			HandleDialogMoving();
+		HandleDialogMoving();
 	}
 	else if (state == 1)
 	{

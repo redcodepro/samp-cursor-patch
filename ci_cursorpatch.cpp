@@ -3,7 +3,6 @@
 bool lock_mouse = false;
 bool move_available = false;
 bool move_active = false;
-bool dialog_moving = false;
 
 BYTE  CurMode_Offs = 0;
 BYTE  WaitFrames_Offs = 0;
@@ -64,7 +63,6 @@ void __fastcall hooked_SetCursorMode(void* ecx, void* edx, int nMode, BOOL bHide
 	{
 		lock_mouse = false;
 		move_available = false;
-		dialog_moving = false;
 		G.d3ddev->ShowCursor(FALSE);
 
 		__memset(EnterVeh_Addr, 0x53, 1);
@@ -89,12 +87,10 @@ void __fastcall hooked_SetCursorMode(void* ecx, void* edx, int nMode, BOOL bHide
 				(bHide < 2) || SAMP->isAnyInputEnabled() ?
 				"\x90\x90\x90\x90\x90" :
 				"\xE8\x46\xF3\xFE\xFF", 5);
-			dialog_moving = (bHide > 2);
 		}
 
 		lock_mouse = true;
 		*(BYTE*)0x6194A0 = 0xC3;
-		//CPad::GetPad(0)->UpdatePads();
 
 		if (nMode != CURSOR_LOCKCAM_NOCURSOR)
 		{
@@ -131,7 +127,7 @@ void InstallCursorPatch(uint32_t samp_address, uint32_t samp_version)
 	EnterVeh_Addr = offs(dwSAMPEnterVehicleAddr);
 
 	__memset(offs(CurModeExt_Input) + 1, 0x02, 1);
-	__memset(offs(CurModeExt_Dialog) + 1, 0x03, 1);
+	__memset(offs(CurModeExt_Dialog) + 1, 0x02, 1);
 	__memset(offs(CurModeExt_Textdraw) + 1, 0x02, 1);
 	__memset(offs(CurModeExt_Scoreboard) + 1, 0x02, 1);
 
