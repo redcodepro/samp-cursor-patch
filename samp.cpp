@@ -1,9 +1,9 @@
 #include "main.h"
 
 /////                               -	0.3.7 R1	0.3.7 R2	0.3.7 R3	0.3.7 R4	0.3.7 R4-2	0.3.7-R5	0.3.DL
-DWORD dwSAMPEntryPointAddr[]	= { 0,	0x31DF13,	0x3195DD,	0x0CC4D0,	0x0CBCB0,	0x0CBCD0,	0,			0x0FDB60 };
-DWORD dwSAMPInputOffset[]		= { 0,	0x21A0E8,	0x21A0F0,	0x26E8CC,	0x26E9FC,	0x26E9FC,	0,			0x2ACA14 };
-DWORD dwSAMPDialogOffset[]		= { 0,	0x21A0B8,	0x21A0C0,	0x26E898,	0x26E9C8,	0x26E9C8,	0,			0x2AC9E0 };
+DWORD dwSAMPEntryPointAddr[]	= { 0,	0x31DF13,	0x3195DD,	0x0CC4D0,	0x0CBCB0,	0x0CBCD0,	0x0CBC90,	0x0FDB60 };
+DWORD dwSAMPInputOffset[]		= { 0,	0x21A0E8,	0x21A0F0,	0x26E8CC,	0x26E9FC,	0x26E9FC,	0x26EB84,	0x2ACA14 };
+DWORD dwSAMPDialogOffset[]		= { 0,	0x21A0B8,	0x21A0C0,	0x26E898,	0x26E9C8,	0x26E9C8,	0x26EB50,	0x2AC9E0 };
 
 bool CSAMP::init()
 {
