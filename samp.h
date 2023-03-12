@@ -8,6 +8,8 @@ enum SampVersion
 	SAMP_037_R3,
 	SAMP_037_R4,
 	SAMP_037_R4_2,
+	SAMP_037_R5,
+	SAMP_03_DL,
 };
 
 enum DialogType
