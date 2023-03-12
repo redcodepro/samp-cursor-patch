@@ -9,8 +9,7 @@
 #include <d3d9.h>
 #include <dinput.h>
 
-#include "minhook/MinHook.h"
-#pragma comment(lib, "minhook/libMinHook.x86.lib")
+#include "minhook/minhook.h"
 
 #include "game_sa/CPad.h"
 
